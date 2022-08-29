@@ -16,3 +16,17 @@ Present the message "A=" followed by the value of the variable, as in the exampl
  
  Input :100.64 
  Output: A=31819,3103*/
+
+ var input = require("fs").readFileSync("stdin","utf8");
+
+ let pi = 3.14159;
+
+ var R = parseFloat(input);
+
+ function circumferenceArea(){
+    let A = 0;
+    A = pi*(R*R);
+    return A;
+ }
+
+ console.log("A="+circumferenceArea().toFixed(4));
