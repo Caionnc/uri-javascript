@@ -14,6 +14,8 @@ var lines = input.split("\n");
 //Shift reads the linha line and splits when finds an space
 let values = input.split("\n");
 
+/*My solution 
+
 var n = parseInt(values.shift());
 
 //BANKNOTES ->
@@ -22,20 +24,26 @@ let bankNotes = [100, 50, 20, 10, 5, 2, 1];
 
 let bankNotesCounter = [0, 0, 0, 0, 0, 0, 0].map((item) => parseInt(item));
 
+console.log(n);
+
 for (let i = 0; i < bankNotes.length; i++) {
   bankNotesCounter[i] = parseInt(n / bankNotes[i]);
   n = n - bankNotesCounter[i]*bankNotes[i];
 
   console.log(bankNotesCounter[i] + " nota(s) de R$ " + bankNotes[i].toFixed(2));
 
-}
+}*/
 
-/*hundredNotes {
-    counter = 0
-  },
-  fiftyNotes,
-  twentyNotes,
-  tenNotes,
-  fiveNotes,
-  twoNotes,
-  oneNotes, */
+//Solution that URI accepts, using For Each
+
+let n = parseInt(input);
+
+let bankNotes = [100, 50, 20, 10, 5, 2, 1];
+
+console.log(n);
+
+for ( let bankNote of bankNotes) {
+    let bankNotesCounter = parseInt(n/bankNote);
+    console.log(`${bankNotesCounter} nota(s) de R$ ${bankNote},00`);
+    n = n % bankNote;
+}
